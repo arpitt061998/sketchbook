@@ -7,7 +7,6 @@ import { socket } from "@/socket";
 const ToolBox = () => {
   const dispatch = useDispatch();
   const activeMenuItem= useSelector((state) => state.menu.activeMenuItem);
-  console.log(activeMenuItem)
   const showStrokeToolOption = activeMenuItem === MENU_ITEMS.PENCIL;
   const showBrushToolOption = activeMenuItem === MENU_ITEMS.PENCIL || MENU_ITEMS.ERASER;
   const {color,size} = useSelector((state) => state.toolbox[activeMenuItem]);

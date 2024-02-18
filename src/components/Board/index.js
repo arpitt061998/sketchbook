@@ -18,7 +18,6 @@ const Board = () => {
     if(!canvasRef.current) return;
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
-    console.log(actionMenuItem)
   if(actionMenuItem === MENU_ITEMS.DOWNLOAD){
       const URL = canvas.toDataURL();
       const anchor = document.createElement("a");
@@ -29,7 +28,6 @@ const Board = () => {
       if(historyPointer.current > 0 && actionMenuItem === MENU_ITEMS.UNDO) historyPointer.current -= 1;
       if(historyPointer.current < drawHistory.current.length - 1 && actionMenuItem === MENU_ITEMS.REDO) historyPointer.current += 1;
       const imgData = drawHistory.current[historyPointer.current];
-      console.log(imgData);
       context.putImageData(imgData, 0, 0);
     }
     dispatch(actionItemClick(null))
@@ -44,7 +42,6 @@ const Board = () => {
       context.lineWidth = size;
     };  
     const handleChangeConfig = (config) =>{
-      console.log("config is ==>",config)
       changeConfig(config.color, config.size);
     }
     changeConfig(color,size);
@@ -123,7 +120,6 @@ const Board = () => {
     }
   },[]);
 
-  console.log("loaded", color,size);
   return (
     <canvas ref={canvasRef}></canvas>
   )
