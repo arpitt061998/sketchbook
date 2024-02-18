@@ -6,7 +6,7 @@ const COLORS = {
     ORANGE: 'orange',
     YELLOW: 'yellow',
     WHITE: 'white'
-}
+};
 
 const MENU_ITEMS = {
     PENCIL: 'PENCIL',
@@ -14,6 +14,6 @@ const MENU_ITEMS = {
     UNDO: 'UNDO',
     REDO: 'REDO',
     DOWNLOAD: 'DOWNLOAD'
-}
+};
 
-export {COLORS, MENU_ITEMS}
+export {COLORS, MENU_ITEMS};
